@@ -1,4 +1,4 @@
-# supersonic-jakarta-faces Project
+# Supersonic Jakarta Faces
 
 This project uses Quarkus, the Supersonic Subatomic Java Framework.
 
