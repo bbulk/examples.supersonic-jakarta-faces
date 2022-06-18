@@ -1,0 +1,45 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+    <title>Hello Supersonic Jakarta Faces</title>
+    <h:outputStylesheet name="primeflex/primeflex.css"/>
+    <h:outputStylesheet name="primeflex/saga-blue.css"/>
+</h:head>
+
+<h:body>
+    <div class="flex align-items-center justify-content-center">
+        <div class="surface-card p-4 shadow-2 border-round w-full lg:w-6">
+            <div class="text-center mb-5">
+                <p:graphicImage name="Jakarta_ee.png" library="images" alt="Image" height="50" styleClass="mb-3"/>
+                <div class="text-900 text-3xl font-medium mb-3">Hello Supersonic Jakarta Faces</div>
+                <span class="text-600 font-medium line-height-3">A link to the Git Repo?</span>
+                <a href="https://github.com/bbulk/examples.multi-tenant-config" class="font-medium no-underline ml-2 text-blue-500 cursor-pointer">Click here!</a>
+            </div>
+
+            <div>
+                <h:form>
+                    <p:growl id="growl" showDetail="true" />
+
+                    <label for="message" class="block text-900 font-medium mb-2">Your Message:</label>
+                    <p:inputText id="message" styleClass="w-full mb-3" value="#{helloFacesView.message}"/>
+
+                    <div class="flex align-items-center justify-content-between mb-6">
+                        <div class="flex align-items-center">
+                            <p:selectBooleanCheckbox id="reverse-message" styleClass="mr-2" value="#{helloFacesView.reverseMessage}"/>
+                            <label for="reverse-message">Reverse Message</label>
+                        </div>
+                    </div>
+
+                    <p:commandButton action="#{helloFacesView.submit}"
+                                     update="reverse-message message growl"
+                                     value="Submit Message"
+                                     icon="pi pi-plus"
+                                     styleClass="w-full"/>
+                </h:form>
+            </div>
+        </div>
+    </div>
+</h:body>
+</html>
